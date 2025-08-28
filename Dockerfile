@@ -1,5 +1,5 @@
 # Imagem base do Java
-FROM openjdk:17-jdk-slim
+FROM openjdk:24-jdk-slim
 
 # Diretório de trabalho no container
 WORKDIR /app
