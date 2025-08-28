@@ -7,7 +7,7 @@ WORKDIR /app
 # Copia o JAR para o container
 COPY target/seu-app.jar app.jar
 
-# Define a porta que a aplicação vai usar
+# Define a porta que a aplicação vai utilizar
 EXPOSE 8080
 
 # Comando para rodar a aplicação
