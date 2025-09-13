@@ -43,7 +43,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dslist.zip
-          path: '**'
+          path: | 
+            **.jar
           
   deploy:
     needs: delivery
