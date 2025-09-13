@@ -31,3 +31,31 @@ jobs:
 
       - name: Push da imagem para o Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/spring-backend:latest
+
+  delivery:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Simulando entrega
+        uses: actions/upload-artifact@v4
+        with:
+          name: dslist.zip
+          path: |
+            .
+            !.git
+          
+  deploy:
+    needs: delivery
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dslist.zip
+      - name: Display structure
+        run: ls -R
+
+       
+    
