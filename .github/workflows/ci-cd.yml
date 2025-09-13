@@ -44,7 +44,7 @@ jobs:
         with:
           name: dslist.zip
           path: |
-            **.jar
+            **.java
           
   deploy:
     needs: delivery
